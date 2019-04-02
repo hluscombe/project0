@@ -22,7 +22,7 @@ h1 {
 h2 {
   text-align: center;
   vertical-align: middle;
-  margin: 0;
+  margin: 1%;
   font-size: 5em;
   animation: rotateY 4s infinite;
   animation-timing-function: linear;
@@ -37,22 +37,34 @@ h3 {
   animation-timing-function: linear;
 }
 
+h4 {
+  text-align: center;
+  vertical-align: middle;
+  width: 20%;
+  margin: 1%;
+  margin-left: 40%;
+  font-size: 2em;
+  background-color: #A1CDF1;
+  cursor: pointer;
+}
+
 div {
   border-color: green;
   width:80%;
   height: 80%;
-  margin: 10%;
+  margin: 0;
 }
 
 table {
-  width: 60%;
+  width: 65%;
   height: auto;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  margin-left: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 30%;
   margin-right: 30%;
   border-collapse: collapse;
   border-style: hidden;
+  border-radius: 20em;
   align-items: center;
 }
 
@@ -66,7 +78,14 @@ td {
   font-size: 200%;
   padding: 50px;
   cursor: pointer;
+  transition: background 0.5s ease-out, color 0.5s ease-out;
 }
+
+td:hover{
+ background: #564787;
+ color: #F2FDFF;
+}
+
 td:after {
   /* display: block; */
   /* margin-top: 100%; */

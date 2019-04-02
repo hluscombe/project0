@@ -1,11 +1,16 @@
-const player1 = 'O';
-const player2 = 'X';
-
 const startGame = function() {
   $('.tile').html('')
 };
 
+const player1 = 'O';
+const player2 = 'X';
+
 let turn = player1;
+
+let player1TileArray = [];
+let player2TileArray = [];
+let playerOneScore = 0;
+let playerTwoScore = 0;
 
 const winCombos = [
   [1, 2, 3],
@@ -18,13 +23,14 @@ const winCombos = [
   [3, 5, 7],
 ];
 
-console.log(winCombos[1][2]);
+const resetBoard = function() {
+  $('.tile').html('').on('click');
+  player1TileArray.length = 0;
+  player2TileArray.length = 0;
+  turn = player1;
+};
 
 $(document).ready(function() {
-  //startGame();
-
-  let player1TileArray = [];
-  let player2TileArray = [];
 
   let turnChange = function() {
     if (turn == player1) {
@@ -36,18 +42,27 @@ $(document).ready(function() {
     }
   };
 
+  let img1 = "svgs/noun_Tongue Out_51673.png";
+  let img2 = "svgs/noun_drooling_2114754.png";
+
   const checkCombos = function() {
     for (var i = 0; i < winCombos.length; i++) {
-      if ( player1TileArray.includes(winCombos[i][0]) && player1TileArray.includes(winCombos[i][1]) && player1TileArray.includes(winCombos[i][2]) ) {
+      if (
+        player1TileArray.includes(winCombos[i][0]) &&            player1TileArray.includes(winCombos[i][1]) && player1TileArray.includes(winCombos[i][2]) ) {
+
         alert(`Player 1 is the winner`);
-        $('.playerturn').html("GAME OVER");
+        playerOneScore++;
+        $('.player1score').html(playerOneScore);
+
         break;
-        // clear board? trigger animation
-      } else if ( player2TileArray.includes(winCombos[i][0]) && player2TileArray.includes(winCombos[i][1]) && player2TileArray.includes(winCombos[i][2]) ) {
+      } else if (
+        player2TileArray.includes(winCombos[i][0]) && player2TileArray.includes(winCombos[i][1]) && player2TileArray.includes(winCombos[i][2]) ) {
+
         alert(`Player 2 is the winner`);
-        $('.playerturn').html("GAME OVER");
+        playerTwoScore++;
+        $('.player2score').html(playerTwoScore);
+
         break;
-        //clear board? trigger animation
       }
     }
   };
@@ -55,7 +70,8 @@ $(document).ready(function() {
   $('.tile').on('click', function(event) {
 
     let clickedTile = Number(event.target.id);
-    $(this).html(turn).off('click');
+    $(this).html(turn);
+    $(event.target.id).off('click');
 
     if (turn == player1) {
       player1TileArray.push(clickedTile);
@@ -76,17 +92,7 @@ $(document).ready(function() {
     turnChange();
   });
 
-
-
-  // iterate through turns - display players turn?
-
-  // log id of clicked sqaure and add to array for player in js
-
-  //stop buttons from being able to double click
-
-  // once one players turns have reached 3, check combination of classes for winning combo with for loop
-
-  // if there is no match continue and check for win next turn
+  $('.reset').on('click', resetBoard);
 
   // if there is a match trigger animation? reset prompt? link to youtube?
 
