@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,700");
+
+* {
+  border: 1px solid green;
+}
+
+body {
+  background-color: #FB9F89;
+  margin: 0 auto;
+  height: 0 auto;
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+  font-size: 5em;
+  animation: rotateX 6s infinite;
+  animation-timing-function: linear;
+}
+
+h2 {
+  text-align: center;
+  vertical-align: middle;
+  margin: 0;
+  font-size: 5em;
+  animation: rotateY 4s infinite;
+  animation-timing-function: linear;
+}
+
+div {
+  border-color: green;
+  width:80%;
+  height: 80%;
+  margin: 10%;
+}
+
+table {
+  width: 60%;
+  height: auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-left: 20%;
+  margin-right: 30%;
+  border-collapse: collapse;
+  border-style: hidden;
+  align-items: center;
+}
+
+td {
+  margin: 0;
+  width: 33.33%;
+  border: 6px solid #223843;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: content-box;
+  font-size: 200%;
+  padding: 50px;
+  cursor: pointer;
+}
+td:after {
+  /* display: block; */
+  /* margin-top: 100%; */
+}
+
+p {
+  text-align: center;
+  font-size: 2em;
+}
+
+iframe {
+  width: 100%;
+}
+
+.container {
+  width: 80%;
+  margin-top: 0;
+  margin-bottom: 10%;
+  margin-left: 10%;
+}
+
+.scorebox {
+  display: inline-block;
+  width: 33%;
+  height: 100px;
+  margin: auto;
+}
+
+.winner {
+  display: none;
+}
+
+#player2 {
+  margin-left: 20%;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+@keyframes rotateY {
+  from {transform:rotateY(0deg);}
+  to {transform: rotateY(360deg);}
+}
+
+@keyframes rotateX {
+  from {transform:rotateX(0deg);}
+  to {transform: rotateX(360deg);}
+}
