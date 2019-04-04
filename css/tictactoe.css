@@ -5,7 +5,7 @@
 } */
 
 body {
-  background-image: url("/Users/hughluscombe/Projects/project0/images/welcometoacidhousecartoon.png");
+  background-image: url("../images/welcometoacidhousecartoon.png");
   background-color: #FB9F89;
   background-color: black;
   margin: 0 auto;
