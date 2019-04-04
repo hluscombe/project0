@@ -1,4 +1,4 @@
-# Acidic Tic Tac Toe#
+# Acidic Tic Tac Toe
 
 Acidic Tic Tac Toe is a web based game of tic tac toe built in javascript
 with an acid house theme.
