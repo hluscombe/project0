@@ -27,7 +27,7 @@ const winCombos = [
 
 const resetBoard = function() {
   board = [ null, null, null, null, null, null, null, null, null ];
-  $('.tile').html('');
+  $('.tile').html('').removeClass('added-class');
   $('.playerturn').html("It's Player 1's turn");
   turn = player1;
   player1TileArray.length = 0;
