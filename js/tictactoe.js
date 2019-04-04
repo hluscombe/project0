@@ -2,8 +2,8 @@ const startGame = function() {
   $('.tile').html('')
 };
 
-const player1 = 'O';
-const player2 = 'X';
+const player1 = '<img src="svgs/noun_Tongue Out_51673.svg" class="tongue">';
+const player2 = '<img src="svgs/noun_drooling_2114754.svg" class="drool">';
 
 let turn = player1;
 
@@ -11,6 +11,8 @@ let player1TileArray = [];
 let player2TileArray = [];
 let playerOneScore = 0;
 let playerTwoScore = 0;
+
+let board = [ null, null, null, null, null, null, null, null, null ]
 
 const winCombos = [
   [1, 2, 3],
@@ -24,10 +26,13 @@ const winCombos = [
 ];
 
 const resetBoard = function() {
-  $('.tile').html('').on('click');
+  board = [ null, null, null, null, null, null, null, null, null ];
+  $('.tile').html('');
+  $('.playerturn').html("It's Player 1's turn");
+  turn = player1;
   player1TileArray.length = 0;
   player2TileArray.length = 0;
-  turn = player1;
+  winningCombo.length = 0;
 };
 
 $(document).ready(function() {
@@ -42,13 +47,10 @@ $(document).ready(function() {
     }
   };
 
-  let img1 = "svgs/noun_Tongue Out_51673.png";
-  let img2 = "svgs/noun_drooling_2114754.png";
-
   const checkCombos = function() {
     for (var i = 0; i < winCombos.length; i++) {
       if (
-        player1TileArray.includes(winCombos[i][0]) &&            player1TileArray.includes(winCombos[i][1]) && player1TileArray.includes(winCombos[i][2]) ) {
+        player1TileArray.includes(winCombos[i][0]) && player1TileArray.includes(winCombos[i][1]) && player1TileArray.includes(winCombos[i][2]) ) {
 
         alert(`Player 1 is the winner`);
         playerOneScore++;
@@ -70,8 +72,14 @@ $(document).ready(function() {
   $('.tile').on('click', function(event) {
 
     let clickedTile = Number(event.target.id);
+    if (board[clickedTile-1]) {
+      return;
+    }
+
+    board[clickedTile-1] = turn;
+
     $(this).html(turn);
-    $(event.target.id).off('click');
+    $(this).addClass('added-class');
 
     if (turn == player1) {
       player1TileArray.push(clickedTile);
@@ -80,8 +88,6 @@ $(document).ready(function() {
       player2TileArray.push(clickedTile);
       player2TileArray.sort();
     }
-    console.log(player1TileArray);
-    console.log(player2TileArray);
 
     if (player1TileArray.length >= 3) {
       checkCombos();
@@ -93,15 +99,4 @@ $(document).ready(function() {
   });
 
   $('.reset').on('click', resetBoard);
-
-  // if there is a match trigger animation? reset prompt? link to youtube?
-
-  // winner = true {reset game button appears}
-
-  // let winner = ;
-  // winMessage.html(`${winner} is the winner`);
 });
-
-
-//fade in animation for winner winner message?
-// game over function
