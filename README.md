@@ -5,15 +5,16 @@ with an acid house theme.
 It was built for my first GA project.
 
 ## Game Link
-https://hluscombe.github.io/project0/
+[Acidic Tic Tac Toe](https://hluscombe.github.io/project0/)
 
 ## Major Features
 * Autoplaying acid music
 * Fun board icons
 * it's tic tac toe, baby!
 
-Screenshot
-![acidtictactoe](images/Screen Shot 2019-04-05 at 9.22.49 am.png)
+## Screenshot
+
+![acidtictactoe](images/readmescreenshot.png)
 
 ## Languages
 
