@@ -1,7 +1,3 @@
-const startGame = function() {
-  $('.tile').html('')
-};
-
 const player1 = '<img src="svgs/noun_Tongue Out_51673.svg" class="tongue">';
 const player2 = '<img src="svgs/noun_drooling_2114754.svg" class="drool">';
 

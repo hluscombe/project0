@@ -1,24 +1,29 @@
-Acidic Tic Tac Toe
+# Acidic Tic Tac Toe#
 
-- Live game link
+Acidic Tic Tac Toe is a web based game of tic tac toe built in javascript
+with an acid house theme.
+It was built for my first GA project.
+
+## Game Link
 https://hluscombe.github.io/project0/
 
-- Project Description
-Acidic Tic Tac Toe is a web based game of tic tac toe built in javascript
-with an acid house theme
+## Major Features
+* Autoplaying acid music
+* Fun board icons
+* it's tic tac toe, baby!
 
-- Major Features
-Autoplaying music
-Fun board icons
+Screenshot
+![acidtictactoe](images/Screen Shot 2019-04-05 at 9.22.49 am.png)
 
-- Screenshots
+## Languages
 
+This project was written with JavaScript & jQuery
 
-- Languages/Frameworks used
-javascript
-jQuery
+## List Of Any Known Bugs
 
-- List Of Any Known Bugs
-sometimes the boxes of the table collapse on reset
+* Sometimes the boxes of the table collapse on reset
+* Occasionally double clicks will cause icons to switch
 
-- Wishlist/Future features
+## Wishlist/Future features
+
+* change from alert style notice of winner to a dynamically created HTML element
