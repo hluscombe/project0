@@ -51,7 +51,7 @@ $(document).ready(function() {
         alert(`Player 1 is the winner`);
         playerOneScore++;
         $('.player1score').html(playerOneScore);
-
+        resetBoard();
         break;
       } else if (
         player2TileArray.includes(winCombos[i][0]) && player2TileArray.includes(winCombos[i][1]) && player2TileArray.includes(winCombos[i][2]) ) {
@@ -59,11 +59,13 @@ $(document).ready(function() {
         alert(`Player 2 is the winner`);
         playerTwoScore++;
         $('.player2score').html(playerTwoScore);
-
+        resetBoard();
         break;
       } else if ((player1TileArray.length + player2TileArray.length) == 9){
+
         alert(`It's a draw! Reset?`);
         resetBoard();
+
         return;
       }
     }
