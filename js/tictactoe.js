@@ -61,6 +61,10 @@ $(document).ready(function() {
         $('.player2score').html(playerTwoScore);
 
         break;
+      } else if ((player1TileArray.length + player2TileArray.length) == 9){
+        alert(`It's a draw! Reset?`);
+        resetBoard();
+        return;
       }
     }
   };
